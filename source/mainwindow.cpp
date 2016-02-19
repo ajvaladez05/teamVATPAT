@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->arduinoConnected = false;
     this->arduinoMega = new ArduinoConnectionLib;
     this->arduinoConnected = arduinoMega->arduinoConnect();
+    this->arduinoMega->writeToArduino();
 
 
 

@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\inventorymanagement.o
+./release\jobpage.o
+./release\maintenance.o
+./release\arduinoconnectionlib.o
+./release\moc_mainwindow.o
+./release\moc_inventorymanagement.o
+./release\moc_jobpage.o
+./release\moc_maintenance.o
+);
