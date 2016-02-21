@@ -19,6 +19,7 @@ SOURCES += main.cpp\
     inventorymanagement.cpp \
     jobpage.cpp \
     maintenance.cpp \
+    job_to_add.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -26,7 +27,8 @@ HEADERS  += mainwindow.h \
     jobpage.h \
     maintenance.h \
     arduinoconnectionlib.h \
-    arduinoconnectionlib_global.h
+    arduinoconnectionlib_global.h \
+    job_to_add.h
 
 
 FORMS    += mainwindow.ui \

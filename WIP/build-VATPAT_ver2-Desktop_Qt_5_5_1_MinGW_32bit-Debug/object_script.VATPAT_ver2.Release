@@ -4,7 +4,7 @@ INPUT(
 ./release\inventorymanagement.o
 ./release\jobpage.o
 ./release\maintenance.o
-./release\arduinoconnectionlib.o
+./release\job_to_add.o
 ./release\moc_mainwindow.o
 ./release\moc_inventorymanagement.o
 ./release\moc_jobpage.o

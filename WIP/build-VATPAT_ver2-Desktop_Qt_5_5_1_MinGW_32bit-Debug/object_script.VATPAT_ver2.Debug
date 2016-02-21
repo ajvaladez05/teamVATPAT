@@ -4,7 +4,7 @@ INPUT(
 ./debug\inventorymanagement.o
 ./debug\jobpage.o
 ./debug\maintenance.o
-./debug\arduinoconnectionlib.o
+./debug\job_to_add.o
 ./debug\moc_mainwindow.o
 ./debug\moc_inventorymanagement.o
 ./debug\moc_jobpage.o
