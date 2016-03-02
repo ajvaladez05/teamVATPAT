@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "job_to_add.h"
 #include "arduinoconnectionlib.h"
 
 
@@ -24,9 +25,22 @@ private slots:
 
     void on_actionMaintenance_triggered();
 
+    void on_addJobBtn_clicked();
+
+    void on_removeJobBttn_clicked();
+
+    void on_pushButton_clicked();
+
+signals:
+    void on_close();
+public slots:
+    void newJob(Job_to_Add nJob);
+    void buttonClick();
+
 private:
     Ui::MainWindow *ui;
     bool arduinoConnected;
+    Job_to_Add jobToAdd;
     ArduinoConnectionLib *arduinoMega;
 
 };

@@ -1,10 +1,16 @@
 #ifndef JOB_TO_ADD_H
 #define JOB_TO_ADD_H
+
 #include <QString>
+
+
 
 class Job_to_Add
 {
+
 public:
+
+
     Job_to_Add();
     int assemblyLevel;
     QString instrument;
@@ -15,7 +21,11 @@ public:
     QString color; // This may not be needed
     double length_assy; // Assembly length
     double length_atlas; // Atlas length
+    int desiredNumber;
+
+
 private:
+    // Don't know if need anything here yet
 
 
 
