@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport
+QT       += core gui serialport designer sql
 LIBS     += "C:\Users\Anthony\Desktop\School\SeniorDesign\VATPAT\build-ArduinoConnectionLib-Desktop_Qt_5_5_1_MinGW_32bit-Debug\debug\ArduinoConnectionLib.dll"
 LIBS     += "C:\Users\Anthony\Desktop\School\SeniorDesign\VATPAT\build-ArduinoConnectionLib-Desktop_Qt_5_5_1_MinGW_32bit-Release\release\ArduinoConnectionLib.dll"
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     inventorymanagement.cpp \
     jobpage.cpp \
     maintenance.cpp \
-    job_to_add.cpp
+    job_to_add.cpp \
+    databaseconnector.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -28,7 +29,8 @@ HEADERS  += mainwindow.h \
     maintenance.h \
     arduinoconnectionlib.h \
     arduinoconnectionlib_global.h \
-    job_to_add.h
+    job_to_add.h \
+    databaseconnector.h
 
 
 FORMS    += mainwindow.ui \

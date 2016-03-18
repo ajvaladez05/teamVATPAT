@@ -6,6 +6,7 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QDebug>
+#include <QList>
 #include "arduinoconnectionlib.h"
 
 
@@ -27,8 +28,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->feedersCheckBox->setDisabled(true);
     ui->invDoorCheckBox->setDisabled(true);
     ui->motionSystemCheckBox->setDisabled(true);
-
-    connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(buttonClick()));
 
 
 
@@ -52,9 +51,17 @@ void MainWindow::on_actionInventory_Management_triggered()
 void MainWindow::on_actionAdd_Job_triggered()
 {
 
-    jobpage jobpageScreen;
-    jobpageScreen.setModal(true);
-    jobpageScreen.exec();
+
+    this->addJobDialog = new jobpage(this);
+
+//    jobpage jobpageScreen;
+//    jobpageScreen.setModal(true);
+//    jobpageScreen.exec();
+
+
+    connect(addJobDialog,SIGNAL(sendJob(Job_to_Add*)),this,SLOT(receiveNewJob(Job_to_Add*)));
+
+    addJobDialog->exec();
 }
 
 void MainWindow::on_actionMaintenance_triggered()
@@ -64,20 +71,8 @@ void MainWindow::on_actionMaintenance_triggered()
     maintenanceScreen.exec();
 }
 
-void MainWindow::newJob(Job_to_Add nJob)
-{
 
-}
 
-void MainWindow::buttonClick()
-{
-    if(ui->arduinoCheckBox->isChecked()){
-        ui->arduinoCheckBox->setChecked(false);
-    }
-    else{
-        ui->arduinoCheckBox->setChecked(true);
-    }
-}
 
 void MainWindow::on_addJobBtn_clicked()
 {
@@ -89,7 +84,12 @@ void MainWindow::on_removeJobBttn_clicked()
 
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::receiveNewJob(Job_to_Add *newJob)
 {
-
+  // Assume validation has been completed on the add job page. Add the new job to the vector of jobs in queue.
+  this->jobList.append(newJob);
+    // Reload the text view widget to show new job in queue.
 }
+
+
+

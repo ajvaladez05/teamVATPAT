@@ -17,15 +17,15 @@ public:
     long int tube_pn;
     double MWI_step;
     QString material;
-    double diameter; // This may not be needed.
-    QString color; // This may not be needed
     double length_assy; // Assembly length
     double length_atlas; // Atlas length
     int desiredNumber;
+    bool isValid;
 
 
 private:
     // Don't know if need anything here yet
+    void checkValidity(); // Check if the tube can be produced.
 
 
 

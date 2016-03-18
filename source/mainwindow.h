@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QList>
+#include <QStandardItemModel>
+#include "jobpage.h"
 #include "job_to_add.h"
 #include "arduinoconnectionlib.h"
 
@@ -29,19 +32,23 @@ private slots:
 
     void on_removeJobBttn_clicked();
 
-    void on_pushButton_clicked();
+
 
 signals:
     void on_close();
 public slots:
-    void newJob(Job_to_Add nJob);
-    void buttonClick();
+    void receiveNewJob (Job_to_Add *newJob);
+
 
 private:
     Ui::MainWindow *ui;
     bool arduinoConnected;
-    Job_to_Add jobToAdd;
+    jobpage *addJobDialog;
     ArduinoConnectionLib *arduinoMega;
+    QList<Job_to_Add*> jobList;
+    void tableConstructor(QStandardItemModel *model); // Construct the job table
+
+
 
 };
 

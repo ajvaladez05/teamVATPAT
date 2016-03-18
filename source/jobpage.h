@@ -2,7 +2,6 @@
 #define JOBPAGE_H
 
 #include <QDialog>
-#include <QList>
 #include "job_to_add.h"
 
 namespace Ui {
@@ -24,9 +23,19 @@ private slots:
 
     void on_Cancel_button_clicked();
 
+
+
+    void on_pnSearchBttn_clicked();
+
+signals:
+    void sendJob (Job_to_Add *newJob);
+
+public slots:
+
+
 private:
     Ui::jobpage *ui;
-    QList<Job_to_Add*> jobsTocomplete;
+    Job_to_Add *tempJob;
 
 
 };

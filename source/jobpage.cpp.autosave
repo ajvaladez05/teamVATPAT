@@ -35,7 +35,7 @@ void jobpage::on_Add_job_button_clicked()
     this-> tempJob->material = ui->Material_input->displayText();
     this->tempJob->length_assy = ui->Length_assy_input->displayText().toDouble();
     this-> tempJob->length_atlas = ui->Length_atlas_input->displayText().toDouble();
-
+    
     if (tempJob->isValid){
     emit sendJob(tempJob);
     this->close();
