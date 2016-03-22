@@ -6,29 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>583</width>
-    <height>338</height>
+    <width>907</width>
+    <height>342</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTableView" name="jobTable">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
+      <x>11</x>
+      <y>209</y>
       <width>158</width>
       <height>25</height>
      </rect>
@@ -53,7 +43,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>286</x>
+      <x>566</x>
       <y>12</y>
       <width>235</width>
       <height>54</height>
@@ -122,7 +112,7 @@
    <widget class="QGroupBox" name="machineStatusBox">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>570</x>
       <y>90</y>
       <width>211</width>
       <height>151</height>
@@ -658,13 +648,23 @@
     <zorder>bladeLabel</zorder>
     <zorder>bladeNumber</zorder>
    </widget>
+   <widget class="QTableView" name="jobTableView">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>501</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>583</width>
+     <width>907</width>
      <height>21</height>
     </rect>
    </property>

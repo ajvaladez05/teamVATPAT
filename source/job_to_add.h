@@ -23,6 +23,24 @@ public:
     bool isValid;
 
 
+
+
+    long getTube_pn() const;
+
+    double getMWI_step() const;
+
+    QString getMaterial() const;
+
+    double getLength_assy() const;
+
+    double getLength_atlas() const;
+
+    int getDesiredNumber() const;
+
+    QString tableValue(int selection); // Return string value of the job_to_add member
+
+
+
 private:
     // Don't know if need anything here yet
     void checkValidity(); // Check if the tube can be produced.

@@ -27,6 +27,10 @@ public:
     QString getDbPassword() const;
     void setDbPassword(const QString &value);
 
+    void configureDataBase();
+    bool openDataBase(); // Try to open database and return true if it can be opened.
+
+
 signals:
 
 public slots:
@@ -40,8 +44,6 @@ private:
     QSqlDatabase db;
 
 
-    void configureDataBase();
-    bool openDataBase(); // Try to open database and return true if it can be opened.
-};
+    };
 
 #endif // DATABASECONNECTOR_H

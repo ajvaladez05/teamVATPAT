@@ -19,8 +19,6 @@ public:
 private slots:
     void on_Add_job_button_clicked();
 
-    void on_Remove_job_button_clicked();
-
     void on_Cancel_button_clicked();
 
 
@@ -36,6 +34,9 @@ public slots:
 private:
     Ui::jobpage *ui;
     Job_to_Add *tempJob;
+
+
+
 
 
 };

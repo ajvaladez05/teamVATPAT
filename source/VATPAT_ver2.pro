@@ -36,4 +36,5 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     inventorymanagement.ui \
     jobpage.ui \
-    maintenance.ui
+    maintenance.ui \
+    removejobpage.ui

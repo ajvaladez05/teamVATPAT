@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QList>
-#include <QStandardItemModel>
+#include <QAbstractTableModel>
 #include "jobpage.h"
 #include "job_to_add.h"
 #include "arduinoconnectionlib.h"
@@ -20,6 +20,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+
 
 private slots:
     void on_actionInventory_Management_triggered();
@@ -46,8 +48,10 @@ private:
     jobpage *addJobDialog;
     ArduinoConnectionLib *arduinoMega;
     QList<Job_to_Add*> jobList;
-    void tableConstructor(QStandardItemModel *model); // Construct the job table
-
+    QAbstractItemModel *tableModel;
+    QList<QString> jobHeaderList;
+    void setJobHeaderList(QAbstractItemModel* table);
+    QAbstractItemModel* initTableModel();
 
 
 };

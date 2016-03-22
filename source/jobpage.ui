@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>40</y>
+     <y>30</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -50,151 +50,110 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Press &lt;span style=&quot; text-decoration: underline;&quot;&gt;Cancel&lt;/span&gt; to leave this page without adding a job.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>310</y>
-     <width>307</width>
-     <height>25</height>
+     <x>30</x>
+     <y>27</y>
+     <width>243</width>
+     <height>271</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="Length_atlas_input"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="Quantity_input">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="assemblyLevel_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Assembly Level&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="Length_atlas_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Length/Atlas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="Material_input"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="Lengt_assy_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Length/Assy&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="Length_assy_input"/>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="assemblyLevel_input"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="Tube_pn_input"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="Quantity_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Quantity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="MWI_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;MWI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="Tube_pn_label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Tube P/N&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="Material_Lable">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Material&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="MWI_input"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
      <widget class="QPushButton" name="Add_job_button">
       <property name="text">
        <string>Add Job</string>
       </property>
      </widget>
     </item>
-    <item>
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>28</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QPushButton" name="Remove_job_button">
-      <property name="text">
-       <string>Remove Job</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>28</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
+    <item row="1" column="1">
      <widget class="QPushButton" name="Cancel_button">
       <property name="text">
        <string>Cancel</string>
       </property>
      </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>31</x>
-     <y>27</y>
-     <width>241</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="Length_atlas_input"/>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLineEdit" name="Quantity_input">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="assemblyLevel_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Assembly Level&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="Length_atlas_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Length/Atlas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="Material_input"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="Lengt_assy_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Length/Assy&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="Length_assy_input"/>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLineEdit" name="assemblyLevel_input"/>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="Tube_pn_input"/>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="Quantity_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Quantity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="MWI_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;MWI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="Tube_pn_label">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Tube P/N&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="Material_Lable">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Material&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="MWI_input"/>
     </item>
    </layout>
   </widget>
@@ -209,7 +168,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>assemblyLevel_input</tabstop>
   <tabstop>pnSearchBttn</tabstop>
   <tabstop>Add_job_button</tabstop>
-  <tabstop>Remove_job_button</tabstop>
   <tabstop>Cancel_button</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
