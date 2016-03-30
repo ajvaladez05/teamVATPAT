@@ -1,5 +1,7 @@
 #include "inventorymanagement.h"
 #include "ui_inventorymanagement.h"
+#include "arduinoconnectionlib.h"
+#include "spooltoadd.h"
 #include <QStandardItemModel>
 
 inventorymanagement::inventorymanagement(QWidget *parent) :
@@ -34,6 +36,8 @@ inventorymanagement::inventorymanagement(QWidget *parent) :
       ui->inventoryTable->setModel(model);
 
 
+
+
 }
 
 inventorymanagement::~inventorymanagement()
@@ -43,6 +47,39 @@ inventorymanagement::~inventorymanagement()
 
 void inventorymanagement::on_saveButton_clicked()
 {
+    // Check if safety door opened. This is not implemented but should be used later.
+    // Need the arduino connected and request a call to see if inventory door is opened. Should probably only want the user to be able to add spools when door is open to avoid mistakes.
+
+    // bool doorOpened = false;
+    // Create arduino connection here
+    // doorOpened = some function call to see if safety door is opened
+    // if safety door is opened, continue with save inventory function else, bring up pop up that safety door has not yet been opened and that no inventory can be added at this time.
+
+    // Init temp spool
+    this->tempSpool = new spoolToAdd;
+
+    //VERIFY THE VALUES!!!
+    /***************************
+     * FINISH ME!!!
+     * *************************/
+
+
+    // If values verified, fetch values from input
+    /**************************
+     * FINISH ME!!
+     * ************************/
+
+    tempSpool->setLength(ui->lengthLineEdit->text().toDouble());
+    tempSpool->setSpoolLocation(ui->spoolLocationLineEdit->text().toInt());
+    tempSpool->setTubePN(ui->tubeNumberLineEdit->text());
+    tempSpool->setTubeType(ui->tubeTypeLineEdit->text());
+
+    /***************************************************
+     * PASS THIS OBJECT INTO THE DATABASE ADD STRING
+     * UPDATE THE MODEL FOR THE TABLE TO REFLECT CHANGES
+     * *************************************************/
+
+
 
 }
 

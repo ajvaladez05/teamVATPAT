@@ -68,7 +68,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Current Inventory&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -88,7 +88,7 @@
     <item row="0" column="1" rowspan="4">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLineEdit" name="spoolLineEdit"/>
+       <widget class="QLineEdit" name="spoolLocationLineEdit"/>
       </item>
       <item>
        <widget class="QLineEdit" name="tubeNumberLineEdit"/>

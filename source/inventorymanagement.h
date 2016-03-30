@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QStandardItemModel>
+#include "spooltoadd.h"
 
 namespace Ui {
 class inventorymanagement;
@@ -27,6 +28,8 @@ private:
     Ui::inventorymanagement *ui;
     QSqlDatabase db;
     void createRowHeaders (QStandardItemModel *model);
+    spoolToAdd *tempSpool;
+
 };
 
 #endif // INVENTORYMANAGEMENT_H
