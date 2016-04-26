@@ -14,8 +14,8 @@ public:
     Job_to_Add();
     int assemblyLevel;
     QString instrument;
-    long int tube_pn;
-    double MWI_step;
+    QString tube_pn;
+    int MWI_step;
     QString material;
     double length_assy; // Assembly length
     double length_atlas; // Atlas length
@@ -25,9 +25,9 @@ public:
 
 
 
-    long getTube_pn() const;
+    QString getTube_pn() const;
 
-    double getMWI_step() const;
+    int getMWI_step() const;
 
     QString getMaterial() const;
 

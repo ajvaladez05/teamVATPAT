@@ -5,8 +5,10 @@
 #include <QList>
 #include <QAbstractTableModel>
 #include "jobpage.h"
+#include "removejobdialog.h"
 #include "job_to_add.h"
 #include "arduinoconnectionlib.h"
+#include "linearaxiscontroller.h"
 
 
 namespace Ui {
@@ -36,22 +38,46 @@ private slots:
 
 
 
+
+
+
+
+
+
 signals:
     void on_close();
+    void sendJobToDelete(Job_to_Add *jobToRemove, int jobNumber);
 public slots:
     void receiveNewJob (Job_to_Add *newJob);
 
 
+
+
 private:
     Ui::MainWindow *ui;
+
+    //Status Variables
     bool arduinoConnected;
+    bool inventoryDBConnected;
+    bool tubeDBConnected;
+    bool linearMotionConnected;
+
+    QString initFailMessage;
+
+    linearAxisController *linearAxisMotor;
     jobpage *addJobDialog;
+    removeJobDialog *removeDialog;
     ArduinoConnectionLib *arduinoMega;
     QList<Job_to_Add*> jobList;
     QAbstractItemModel *tableModel;
     QList<QString> jobHeaderList;
     void setJobHeaderList(QAbstractItemModel* table);
     QAbstractItemModel* initTableModel();
+    void initialStartupCheck();
+    void connectionsHandler();
+
+private:
+
 
 
 };

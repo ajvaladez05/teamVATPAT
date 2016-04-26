@@ -13,7 +13,7 @@ Job_to_Add::Job_to_Add()
 
     this->assemblyLevel = 0;
     this->instrument = "";
-    this->tube_pn = 0;
+    this->tube_pn = "";
     this->MWI_step = 0.0;
     this->material = "";
     this->length_assy = 0.0;
@@ -41,31 +41,19 @@ QString Job_to_Add::getMaterial() const
     return material;
 }
 
-double Job_to_Add::getMWI_step() const
+int Job_to_Add::getMWI_step() const
 {
     return MWI_step;
 }
 
-long Job_to_Add::getTube_pn() const
+QString Job_to_Add::getTube_pn() const
 {
     return tube_pn;
 }
 
 void Job_to_Add::checkValidity()
 {
-    // Connect to data base and run determination if the tube can be produced
-    DataBaseConnector db;
-    db.setDbHostHame(DBNAME);
-    db.setDbName(DBNAME);
-    db.setDbUserName(USERNAME);
-    db.setDbPassword(PASSWORD);
 
-    db.configureDataBase();
-
-    if(db.openDataBase()){
-        //Database can be opened. Queuery if there is enough product to produce tube
-
-    }
 }
 
 QString Job_to_Add::tableValue(int selection)
@@ -76,7 +64,7 @@ QString Job_to_Add::tableValue(int selection)
     switch (selection){
     case 0:
         // Return Tube P/N
-        stringReturn = QString::number(this->getTube_pn());
+        stringReturn = this->getTube_pn();
         break;
     case 1:
         // Return MWI
@@ -94,10 +82,7 @@ QString Job_to_Add::tableValue(int selection)
         // Return Length_atlas
         stringReturn = QString::number(this->getLength_atlas());
         break;
-    case 5:
-        // Quantity
-        stringReturn = QString::number(this->getDesiredNumber());
-        break;
+
     }
 
     return stringReturn;

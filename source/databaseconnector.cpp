@@ -3,84 +3,48 @@
 
 DataBaseConnector::DataBaseConnector(QObject *parent) : QObject(parent)
 {
-    // Constructor for database connection
-
-    this->setDbHostHame("");
-    this->setDbID("");
-    this->setDbName("");
-    this->setDbPassword("");
-    this->setDbUserName("");
-
-}
-
-void DataBaseConnector::configureDataBase()
-{
-    this->db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName(this->getDbHostHame());
-    db.setDatabaseName(this->getDbName());
-    db.setUserName(this->getDbUserName());
-    db.setPassword(this->getDbPassword());
+    // Constructor for database connection without loading
+    this->databaseName = "";
+    this->dsnString = "";
+    this->serverName = "";
+    this->password = "";
+    this->username = "";
 
 
 }
 
-bool DataBaseConnector::openDataBase()
+
+
+
+bool DataBaseConnector::openDataBase(const QString &servername)
 {
-    bool isValid = false;
-    if (this->db.open()){
-        // Print that database was opened
-        isValid = true;
+    bool isOpen = false;
+    this->serverName = "LOCALHOST\\SQLEXPRESS";
+
+    if (servername == "INVENTORY SERVER"){
+        // Create connection string for inventory server
+        this->dsnString = "FINISH THIS CONNECTION STRING";
     }
-    return isValid;
-}
 
-QString DataBaseConnector::getDbID() const
-{
-    return dbID;
-}
+    else if(servername == "TUBE SERVER"){
+        this->dsnString = "FINISH THIS CONNECTION STRING";
+    }
 
-void DataBaseConnector::setDbID(const QString &value)
-{
-    dbID = value;
-}
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC"); // Universal drive for SQL
+    db.setConnectOptions();
+    db.setDatabaseName(this->dsnString);
 
-QString DataBaseConnector::getDbHostHame() const
-{
-    return dbHostHame;
-}
+    if (db.open())
+    {
+        // Database can be opened for business
+        isOpen = true;
+    }
 
-void DataBaseConnector::setDbHostHame(const QString &value)
-{
-    dbHostHame = value;
-}
+    else
+    {
+        // PRINT ERROR STRING TO LOGGER
+        isOpen = false;
+    }
 
-QString DataBaseConnector::getDbName() const
-{
-    return dbName;
+    return isOpen;
 }
-
-void DataBaseConnector::setDbName(const QString &value)
-{
-    dbName = value;
-}
-
-QString DataBaseConnector::getDbUserName() const
-{
-    return dbUserName;
-}
-
-void DataBaseConnector::setDbUserName(const QString &value)
-{
-    dbUserName = value;
-}
-
-QString DataBaseConnector::getDbPassword() const
-{
-    return dbPassword;
-}
-
-void DataBaseConnector::setDbPassword(const QString &value)
-{
-    dbPassword = value;
-}
-

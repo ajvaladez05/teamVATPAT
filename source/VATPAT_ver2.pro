@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     maintenance.cpp \
     job_to_add.cpp \
     databaseconnector.cpp \
-    spooltoadd.cpp
+    spooltoadd.cpp \
+    removejobdialog.cpp \
+    linearaxiscontroller.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -32,11 +34,13 @@ HEADERS  += mainwindow.h \
     arduinoconnectionlib_global.h \
     job_to_add.h \
     databaseconnector.h \
-    spooltoadd.h
+    spooltoadd.h \
+    removejobdialog.h \
+    linearaxiscontroller.h
 
 
 FORMS    += mainwindow.ui \
     inventorymanagement.ui \
     jobpage.ui \
     maintenance.ui \
-    removejobpage.ui
+    removejobdialog.ui
