@@ -29,6 +29,8 @@ MainWindow::MainWindow(QWidget *parent) :
         failStateMessageBox.setText(this->initFailMessage);
         failStateMessageBox.exec();
     }
+
+
 }
 
 MainWindow::~MainWindow()
@@ -117,14 +119,18 @@ void MainWindow::on_removeJobBttn_clicked()
 
 void MainWindow::receiveNewJob(Job_to_Add *newJob)
 {
-     // Assume validation has been completed on the add job page. Add the new job to the vector of jobs in queue.
-     this->jobList.append(newJob);
+    Job_to_Add *jobToAppend = new Job_to_Add;
+    jobToAppend = newJob;
+    // Assume validation has been completed on the add job page. Add the new job to the vector of jobs in queue.
+     this->jobList.append(jobToAppend);
 
     // Reload the table view widget to show new job in queue.
      ui->jobTableView->setModel(initTableModel());
 
      // Reload the jobs in queue widget to reflect number of jobs
      ui->queueNumberLCD->display(jobList.count());
+
+
 }
 
 
@@ -136,8 +142,8 @@ void MainWindow::setJobHeaderList(QAbstractItemModel *table)
     table->setHeaderData(0,Qt::Horizontal,QObject::tr("Tube P/N"));
     table->setHeaderData(1,Qt::Horizontal,QObject::tr("MWI"));
     table->setHeaderData(2,Qt::Horizontal,QObject::tr("Material"));
-    table->setHeaderData(3,Qt::Horizontal,QObject::tr("Length/Assy"));
-    table->setHeaderData(4,Qt::Horizontal,QObject::tr("Length/Atlas"));
+    table->setHeaderData(3,Qt::Horizontal,QObject::tr("Length"));
+    table->setHeaderData(4,Qt::Horizontal,QObject::tr("VATPAT Number"));
 
 
 
@@ -161,6 +167,8 @@ QAbstractItemModel *MainWindow::initTableModel()
         for (int row=0; row < rowCount; ++row){
             for (int col=0; col < colCount; ++col){
                 QModelIndex index = tableModel->index(row,col,QModelIndex()); // Grabbing the index
+                qDebug() << index;
+                qDebug() << tableModel->setData(index,jobList.at(row)->tableValue(col));
                 tableModel->setData(index,jobList.at(row)->tableValue(col));
             }
         }
@@ -217,8 +225,8 @@ void MainWindow::initialStartupCheck()
     DataBaseConnector *checkInventoryDB = new DataBaseConnector;
     DataBaseConnector *checkTubeDB = new DataBaseConnector;
 
-    this->inventoryDBConnected = checkInventoryDB->openDataBase("INVENTORY DB NAME");
-    this->tubeDBConnected = checkTubeDB->openDataBase("TUBE DB NAME");
+    this->inventoryDBConnected = checkInventoryDB->checkInventoryDB();
+    this->tubeDBConnected = checkTubeDB->checkPartDB();
 
     if (inventoryDBConnected){
         ui->invDBcheckbox->setChecked(true);

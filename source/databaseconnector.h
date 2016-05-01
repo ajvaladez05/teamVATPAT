@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QString>
 #include <QtSql>
+#include "job_to_add.h"
 
 
 class DataBaseConnector : public QObject
@@ -12,8 +13,15 @@ class DataBaseConnector : public QObject
 public:
     explicit DataBaseConnector(QObject *parent = 0);
 
-    bool openDataBase(const QString &servername); // Try to open database and return true if it can be opened.
+    QSqlDatabase openDataBase(const QString &dbName); // Try to open database and return true if it can be opened.
 
+    Job_to_Add* vatpatPartNumberQuery ( int vatpatPartNum);
+
+    Job_to_Add* inventoryMaterialQuery ( Job_to_Add* tempJob, int tube_pn);
+
+    bool checkInventoryDB();
+
+    bool checkPartDB();
 
 signals:
 

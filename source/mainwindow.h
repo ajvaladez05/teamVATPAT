@@ -22,6 +22,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QList<Job_to_Add*>  jobList;
 
 
 
@@ -68,7 +69,7 @@ private:
     jobpage *addJobDialog;
     removeJobDialog *removeDialog;
     ArduinoConnectionLib *arduinoMega;
-    QList<Job_to_Add*> jobList;
+
     QAbstractItemModel *tableModel;
     QList<QString> jobHeaderList;
     void setJobHeaderList(QAbstractItemModel* table);

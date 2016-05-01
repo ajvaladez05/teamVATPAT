@@ -2,6 +2,8 @@
 #define JOBPAGE_H
 
 #include <QDialog>
+#include "databaseconnector.h"
+#include "barcodehandler.h"
 #include "job_to_add.h"
 
 namespace Ui {
@@ -21,7 +23,7 @@ private slots:
 
     void on_Cancel_button_clicked();
 
-
+    void readBarcodeData();
 
     void on_pnSearchBttn_clicked();
 
@@ -34,6 +36,9 @@ public slots:
 private:
     Ui::jobpage *ui;
     Job_to_Add *tempJob;
+    DataBaseConnector *partConnection;
+    DataBaseConnector *inventoryConnection;
+    BarcodeHandler *barcodeConnection;
 
 
 

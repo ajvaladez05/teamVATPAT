@@ -16,9 +16,19 @@ Job_to_Add::Job_to_Add()
     this->tube_pn = "";
     this->MWI_step = 0.0;
     this->material = "";
-    this->length_assy = 0.0;
-    this->length_atlas = 0.0;
+    this->length = 0.0;
+    this->vatpatPartNum = 0;
     this->isValid = false;
+}
+
+int Job_to_Add::getVatpatPartNum() const
+{
+    return vatpatPartNum;
+}
+
+double Job_to_Add::getLength() const
+{
+    return length;
 }
 
 int Job_to_Add::getDesiredNumber() const
@@ -26,22 +36,13 @@ int Job_to_Add::getDesiredNumber() const
     return desiredNumber;
 }
 
-double Job_to_Add::getLength_atlas() const
-{
-    return length_atlas;
-}
-
-double Job_to_Add::getLength_assy() const
-{
-    return length_assy;
-}
 
 QString Job_to_Add::getMaterial() const
 {
     return material;
 }
 
-int Job_to_Add::getMWI_step() const
+QString Job_to_Add::getMWI_step() const
 {
     return MWI_step;
 }
@@ -68,19 +69,19 @@ QString Job_to_Add::tableValue(int selection)
         break;
     case 1:
         // Return MWI
-        stringReturn = QString::number(this->getMWI_step());
+        stringReturn = this->getMWI_step();
         break;
     case 2:
         // Return Material
         stringReturn = this->getMaterial();
         break;
     case 3:
-        // Return Length_assy
-        stringReturn = QString::number(this->getLength_assy());
+        // Return Length
+        stringReturn = QString::number(this->getLength());
         break;
     case 4:
-        // Return Length_atlas
-        stringReturn = QString::number(this->getLength_atlas());
+        // Return Vatpart part number
+        stringReturn = QString::number(this->getVatpatPartNum());
         break;
 
     }

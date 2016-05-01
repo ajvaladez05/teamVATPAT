@@ -15,10 +15,10 @@ public:
     int assemblyLevel;
     QString instrument;
     QString tube_pn;
-    int MWI_step;
+    QString MWI_step;
     QString material;
-    double length_assy; // Assembly length
-    double length_atlas; // Atlas length
+    double length;
+    int vatpatPartNum;
     int desiredNumber;
     bool isValid;
 
@@ -27,19 +27,17 @@ public:
 
     QString getTube_pn() const;
 
-    int getMWI_step() const;
+    QString getMWI_step() const;
 
     QString getMaterial() const;
-
-    double getLength_assy() const;
-
-    double getLength_atlas() const;
 
     int getDesiredNumber() const;
 
     QString tableValue(int selection); // Return string value of the job_to_add member
 
+    double getLength() const;
 
+    int getVatpatPartNum() const;
 
 private:
     // Don't know if need anything here yet

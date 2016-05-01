@@ -1,10 +1,10 @@
 #ifndef LINEARAXISCONTROLLER_H
 #define LINEARAXISCONTROLLER_H
 
+
 #include <QObject>
 #include <QSerialPort>
 #include <QSerialPortInfo>
-
 
 class linearAxisController : public QObject
 {
